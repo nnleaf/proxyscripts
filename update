@@ -29,13 +29,15 @@ then
   echo "------------------------------"
   echo "--[ Update Debian Version? ]--"
   echo "------------------------------"
+  read -p ""
   if [[ $REPLY =~ ^[Yy]$ ]]
+  then
     sudo apt-get update
     sudo apt-get upgrade
     sudo apt-get full-upgrade
     sudo apt --purge autoremove
     cat /etc/debian_version
-  then
+  fi
 fi
 echo "------------------------"
 echo "--[ Updating mlocate ]--"
